@@ -1,5 +1,7 @@
 package models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,12 +10,12 @@ import javax.persistence.Id;
 
 @Entity
 // es para poder manejar en la base de datos
-public class Movie {
+public class Movie implements Serializable{
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+@Id
+@GeneratedValue(strategy=GenerationType.AUTO)
 	//Para que se generen los valores.Se va incrementando en 1 el ID a medida que se agregan pelis
-	@Column(nullable=false,updatable=false)
+@Column(nullable=false,updatable=false)
 	// Cómo es el ID no puede ser nulo y tampoco se puede actualizar
 
 
