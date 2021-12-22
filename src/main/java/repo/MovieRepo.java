@@ -12,16 +12,16 @@ import models.Movie;
 public interface MovieRepo extends JpaRepository<Movie, Integer> {
 
 	// filtrar por titulo
-	@Query ("SELECT p FROM Movie m WHERE m.title LIKE %:title%")
+	@Query ("SELECT m FROM Movie m WHERE m.title LIKE %:title%")
 	List<Movie> findTitle(@Param("title") String title);
 
 	
 	// filtrar los populares
-	@Query ("SELECT p FROM  Movie m ORDER BY m.rate DESC")
+	@Query ("SELECT m FROM  Movie m ORDER BY m.rate DESC")
 	List<Movie> findPopular(PageRequest pageRequest);
 
 
 	//filtrar por clasificación
-	@Query ("SELECT p FROM Movie m WHERE m.classified LIKE %:classified%")
+	@Query ("SELECT m FROM Movie m WHERE m.classified LIKE %:classified%")
 	List<Movie> findClass(@Param("classified") String classified);
 }
