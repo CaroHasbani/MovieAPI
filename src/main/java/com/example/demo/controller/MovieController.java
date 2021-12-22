@@ -20,7 +20,7 @@ import com.example.demo.services.Services;
 
 @RequestMapping("api")
 
-@CrossOrigin(origins = "http://localhost:5050")
+@CrossOrigin(origins = "http://localhost:8080")
 public class MovieController {
  private final Services service;
 
