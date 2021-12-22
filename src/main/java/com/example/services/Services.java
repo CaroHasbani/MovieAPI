@@ -1,4 +1,4 @@
-package services;
+package com.example.services;
 
 import java.util.List;
 //import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import models.Movie;
-import repo.MovieRepo;
+import com.example.models.Movie;
+import com.example.repo.MovieRepo;
 
 @Service
 public class Services {
