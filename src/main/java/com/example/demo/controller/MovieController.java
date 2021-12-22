@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.demo.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.models.Movie;
-import com.example.services.Services;
+import com.example.demo.models.Movie;
+import com.example.demo.services.Services;
 @RestController
 
 @RequestMapping("api")
