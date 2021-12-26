@@ -30,7 +30,6 @@ public class MovieController {
 	this.service=service;
 	}
 	
-
 	
 	public Services getService() {
 		return service;

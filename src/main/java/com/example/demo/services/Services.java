@@ -23,31 +23,41 @@ public class Services {
 	
 	//al inicio de la API aparece lo siguiente
 		public String init() {
-			return "<h1>Bienvenido a mi API de Peliculas<h1>";
-			};
+			return "<h1>Welcome to my movie's API<h1>";
+			
+		};
 	
-	//para Leer el listado de películas
+		// Leer el listado de películas
 
-	public List<Movie> getMovies() {
-		return movieRepository.findAll();
+		public List<Movie> getMovies() {
+			return movieRepository.findAll();
 		}
 	
-	//agregar una pelicula a la bd
-	public Movie createMovie(Movie movie) {
-	return movieRepository.save(movie);	
-	}
+		//Agregar una pelicula a la bd
+		public Movie createMovie(Movie movie) {
+			return movieRepository.save(movie);	
+		}
 	
-	//borrar peliculas
-		public void deleteMovie(Integer id) {
+		//Borrar peliculas
+		
+		public void deleteMovie( Integer id) {
+			
+		Optional <Movie> movieToBeDeleted= movieRepository.findById(id);
+		
+		if (!movieToBeDeleted.isEmpty()) {
 			movieRepository.deleteById(id);
+		}else {
+			throw new RuntimeException("Movie not found");
 		}
+		}
+	
 
 		//actualizar la pelicula
 		public Movie  updateMovie(Movie movie, Integer id){
 
-			Optional<Movie> peliuptade = movieRepository.findById(id);
+			Optional<Movie> movieToBeUpdated = movieRepository.findById(id);
 
-			if (!peliuptade.isEmpty()) {
+			if (!movieToBeUpdated.isEmpty()) {
 				return movieRepository.save(movie);
 			}else {
 				throw new RuntimeException("Movie not found");
